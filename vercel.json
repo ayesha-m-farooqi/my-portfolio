@@ -1,11 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "project_name/wsgi.py",
-      "use": "@vercel/python"
-    }
-  ],
   "routes": [
     {
       "src": "/static/(.*)",
