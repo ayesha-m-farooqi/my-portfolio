@@ -1,0 +1,435 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ayesha Farooq | Portfolio</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/x-icon" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+        <link rel="icon" type="image/x-icon" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+        <link rel="manifest" href="{% static 'site.webmanifest' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            .contact-form-delay {
+                transition-delay: 200ms;
+            }
+        </style>
+    </head>
+    <body class="antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter text-white">
+                AF<span class="text-accent">.</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#skills" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Skills</a>
+                <a href="#projects" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">What I've built</a>
+                <a href="#experience" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Learning Journey</a>
+                <a href="#contact" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+                <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold text-white">Hire Me</a>
+            </div>
+
+            <button class="md:hidden text-white" id="mobile-menu-btn" title="Toggle mobile menu" aria-label="Toggle mobile menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-slate-900 border-t border-white/5" id="mobile-menu">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#about" class="block text-gray-300 hover:text-white py-2">About</a>
+                <a href="#skills" class="block text-gray-300 hover:text-white py-2">Skills</a>
+                <a href="#projects" class="block text-gray-300 hover:text-white py-2">What I've built</a>
+                <a href="#experience" class="block text-gray-300 hover:text-white py-2">Learning Journey</a>
+                <a href="#contact" class="block text-gray-300 hover:text-white py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 z-0"></div>
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-dark rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 reveal">
+                <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+                <span class="text-sm font-medium text-accent">Available for new opportunities</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 reveal delay-100">
+                Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Ayesha Farooq</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-gray-400 mb-4 font-medium reveal delay-200">
+                Web developer, designer, and lifelong learner.
+            </p>
+
+            <p class="text-gray-500 max-w-2xl mx-auto mb-10 text-lg reveal delay-300">
+                I build fast, scalable, and beautiful digital experiences.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16 reveal delay-400">
+                <a href="#projects" class="btn-primary px-8 py-4 rounded-xl font-semibold text-white inline-flex items-center justify-center gap-2">
+                    View My Work
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn-secondary px-8 py-4 rounded-xl font-semibold text-white inline-flex items-center justify-center gap-2">
+                    Get In Touch
+                </a>
+            </div>
+
+            <div class="flex justify-center gap-6 reveal delay-500">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent transition-colors" title="GitHub Profile">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent transition-colors" title="LinkedIn Profile">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="mailto:alex.morgan@email.com" class="text-gray-500 hover:text-accent transition-colors" title="Send Email">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="flex justify-center bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce mt-16 reveal delay-600">
+               <a href="#about">
+                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+               </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id= "about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center gap-4 mb-12 reveal">
+                <div class="h-px w-12 bg-accent"></div>
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase">About Me</span>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div class="reveal">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        Building products people <span class="text-accent">actually love</span> to use.
+                    </h2>
+                    
+                    <div class="space-y-6 text-gray-400 leading-relaxed">
+                        <p>
+                            Software Engineering student with a background in building robust web applications using Django and Angular. I specialize in creating clean, modular code and am currently expanding my skill set into Machine Learning
+                        </p>
+                    </div>
+
+                    <div class="mt-8 space-y-3">
+                        <div class="flex items-center gap-3 text-gray-400">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span>Lahore, Pakistan</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-gray-400">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <span>ayehsamfarooqi@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <a href="{%static 'files/ayesha-farooq.pdf' %}" target="_blank" class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-lg border border-accent/30 text-accent hover:bg-accent/10 transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                        Download Resume
+                    </a>
+                </div>
+
+                <div class="space-y-6 reveal delay-200">
+                    <div class="glass-card rounded-2xl p-8 glow">
+                        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Education</h3>
+                        <div class="mb-2">
+                            <h4 class="text-xl font-bold text-white">COMSATS Institute of Information Technology</h4>
+                            <p class="text-accent font-medium">B.S. Software Engineering</p>
+                            <p class="text-gray-500 text-sm mt-1">2025 — 2029</p>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-4">An inspiring journey of learning and growth in the field of software engineering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center gap-4 mb-4 reveal">
+                <div class="h-px w-12 bg-accent"></div>
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase">Skills</span>
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 reveal">My tech stack</h2>
+       <div class="container mx-auto max-w-[1000px] flex flex-wrap justify-center gap-10 p-4">
+    
+    <div class="flex items-center px-6 py-2 border border-gray-700 rounded-full text-gray-300 wavy-circle">
+        JavaScript
+    </div>
+    <div class="flex items-center px-6 py-2 border border-gray-700 rounded-full text-gray-300 wavy-circle">
+        TypeScript
+    </div>
+    <div class="flex items-center px-6 py-2 border border-gray-700 rounded-full text-gray-300 wavy-circle">
+        Next.js
+    </div>
+    <div class="flex items-center px-6 py-2 border border-gray-700 rounded-full text-gray-300 wavy-circle">
+        CSS
+    </div>
+    <div class="flex items-center px-6 py-2 border border-gray-700 rounded-full text-gray-300 wavy-circle">
+        HTML5
+    </div>
+    <div class="flex items-center px-6 py-2 border border-gray-700 rounded-full text-gray-300 wavy-circle">
+        Node.js
+    </div>
+    <div class="flex items-center px-6 py-2 border border-gray-700 rounded-full text-gray-300 wavy-circle">
+        Angular
+    </div>
+    <div class="flex items-center px-6 py-2 border border-gray-700 rounded-full text-gray-300 wavy-circle">
+        Django
+    </div>
+    <div class="flex items-center px-6 py-2 border border-gray-700 rounded-full text-gray-300 wavy-circle">
+        VS Code
+    </div>
+    <div class="flex items-center px-6 py-2 border border-gray-700 rounded-full text-gray-300 wavy-circle">
+        Git
+    </div>
+     <div class="flex items-center px-6 py-2 border border-gray-700 rounded-full text-gray-300 wavy-circle">
+        <p> &emsp;&ensp;API<br>Integration</p>
+    </div>
+
+</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center gap-4 mb-4 reveal">
+                <div class="h-px w-12 bg-accent"></div>
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase">What I've built</span>
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 reveal">Featured Work</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Portfolio -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden group reveal">
+                    <div class="h-48 bg-gradient-to-br from-dark to-darker relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:scale-105 transition-transform duration-500"> <img src="{%static 'images/portfolio-pic.png' %}" alt="Portfolio Image"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-white">Portfolio Website</h3>
+                            <div class="flex gap-3">
+                                <a href="https://github.com/ayesha-m-farooqi" class="text-gray-400 hover:text-white transition-colors" title="GitHub Repository">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-white transition-colors" title="Live Demo">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Designed and build a personal portfolio website to showcase my projects, skills, and experience. Built with HTML, CSS, and JavaScript and django in backend, with a focus on clean design and smooth animations.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag px-3 py-1 rounded-full text-xs font-medium text-gray-300">HTML</span>
+                            <span class="tag px-3 py-1 rounded-full text-xs font-medium text-gray-300">CSS</span>
+                            <span class="tag px-3 py-1 rounded-full text-xs font-medium text-gray-300">JavaScript</span>
+                            <span class="tag px-3 py-1 rounded-full text-xs font-medium text-gray-300">Django</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wave Pattern -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden group reveal delay-100">
+                    <div class="h-48 bg-gradient-to-br from-primary to-secondary relative overflow-hidden">
+                        <div class=" absolute inset-0  bg-cover bg-center opacity-60 group-hover:scale-105 transition-transform duration-500"> <img src="{% static 'images/wavy-pattern.png' %}" alt="Wave Pattern"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-white">Wave Patterns</h3>
+                            <div class="flex gap-3">
+                                <a href="https://github.com/ayesha-m-farooqi/wave-patterns" class="text-gray-400 hover:text-white transition-colors" title="GitHub Repository">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                                <a href="https://interactivewavesimulation.vercel.app/" class="text-gray-400 hover:text-white transition-colors" title="Live Demo">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            A web app that generates custom wave patterns using the HTML5 Canvas API. Users can customize colors, frequencies, and amplitudes to create unique designs.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag px-3 py-1 rounded-full text-xs font-medium text-gray-300">HTML5</span>
+                            <span class="tag px-3 py-1 rounded-full text-xs font-medium text-gray-300">CSS3</span>
+                            <span class="tag px-3 py-1 rounded-full text-xs font-medium text-gray-300">JavaScript</span>
+                            <span class="tag px-3 py-1 rounded-full text-xs font-medium text-gray-300">Canvas API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="experience" class="py-24 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-4 mb-4 reveal">
+                <div class="h-px w-12 bg-accent"></div>
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase">What I've learned</span>
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 reveal">My Learning Journey</h2>
+
+            <div class="space-y-12">
+                <div class="relative pl-8 border-l-2 border-primary/30 reveal">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-slate-900"></div>
+                    <div class="mb-2">
+                        <h3 class="text-xl font-bold text-white">Machine Learning Engineer</h3>
+                        <p class="text-gray-500 text-sm">2026 — Present</p>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Currently learning Machine Learning and improving problem-solving skills.
+                    </p>
+                </div>
+
+                <div class="relative pl-8 border-l-2 border-primary/30 reveal delay-100">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-slate-900"></div>
+                    <div class="mb-2">
+                        <h3 class="text-xl font-bold text-white">Full-Stack Developer</h3>
+                        <p class="text-gray-500 text-sm">2021 — 2023</p>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        My journey began with a deep dive into the world of full-stack development. I chose a challenging and powerful stack—Django for the backend and Angular for the frontend—to understand how complex systems communicate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center gap-4 mb-4 reveal">
+                <div class="h-px w-12 bg-accent"></div>
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase">Contact</span>
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 reveal">Let's work together</h2>
+            
+            <p class="text-gray-400 max-w-2xl mb-16 reveal">
+                I'm currently open to new opportunities. Whether you have a project in mind, a role to fill, or just want to say hello — my inbox is always open.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="space-y-8 reveal">
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Reach Out Directly</h3>
+                        <div class="space-y-4">
+                            <a href="mailto:alex.morgan@email.com" class="flex items-center gap-4 p-4 rounded-xl glass-card hover:border-accent/50 transition-all group">
+                                <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-accent group-hover:bg-primary/30 transition-colors">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300 group-hover:text-white transition-colors">ayeshamfarooqi@gmail.com</span>
+                            </a>
+                            
+                            <a href="https://github.com/ayesha-m-farooqi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl glass-card hover:border-accent/50 transition-all group" title="GitHub Profile">
+                                <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-accent group-hover:bg-primary/30 transition-colors">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </div>
+                                <span class="text-gray-300 group-hover:text-white transition-colors">github.com/ayesha-m-farooqi</span>
+                            </a>
+                            
+                            <a href="https://linkedin.com/in/ayeshamfarooqi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl glass-card hover:border-accent/50 transition-all group" title="LinkedIn Profile">
+                                <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-accent group-hover:bg-primary/30 transition-colors">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </div>
+                                <span class="text-gray-300 group-hover:text-white transition-colors">linkedin.com/in/ayeshamfarooqi</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 border border-accent/10">
+                        <p class="text-gray-400 text-sm">
+                            Response time is typically within <span class="text-accent font-semibold">24 hours</span>. For urgent inquiries, email is the fastest way to reach me.
+                        </p>
+                    </div>
+                </div>
+
+                <form class="space-y-6 reveal contact-form-delay" id="contact-form" action="https://formspree.io/f/mbdqrdpv" method="POST">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                            <input type="text" name="name" placeholder="Your name" class="input-field w-full px-4 py-3 rounded-xl text-white placeholder-gray-600" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                            <input type="email" name="email" placeholder="your@email.com" class="input-field w-full px-4 py-3 rounded-xl text-white placeholder-gray-600" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                        <textarea rows="5" name="message" placeholder="Tell me about your project or opportunity..." class="input-field w-full px-4 py-3 rounded-xl text-white placeholder-gray-600 resize-none" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full md:w-auto px-8 py-4 rounded-xl font-semibold text-white inline-flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                        </svg>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-500 text-sm">
+                © 2025 Ayesha Farooq. Built with passion & code.
+            </p>
+            <div class="flex gap-6">
+                <a href="UNDER PROGRESS" class="text-gray-500 hover:text-accent text-sm transition-colors">Privacy</a>
+                <a href="UNDER PROGRESS" class="text-gray-500 hover:text-accent text-sm transition-colors">Terms</a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="{% static 'js/script.js' %}"></script>
+</html>
